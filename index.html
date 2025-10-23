@@ -3,71 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SmartCloudPi — Personal Cloud Storage</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Smart Personal Cloud Storage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #0f0f0f;
-      --text: #f5f5f5;
-      --accent: #00bfff;
-      --card: #1a1a1a;
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
     body {
       font-family: 'Inter', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #0f0f0f;
+      color: #f5f5f5;
     }
     header {
-      background: linear-gradient(to right, #0f0f0f, #1a1a1a);
-      padding: 3rem 2rem;
+      background-color: #1a1a1a;
+      padding: 2rem;
       text-align: center;
     }
     header h1 {
-      font-size: 2.5rem;
-      color: var(--accent);
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
     }
     header p {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
+      font-size: 1.1rem;
       color: #ccc;
     }
     section {
       padding: 2rem;
-      max-width: 1000px;
+      max-width: 900px;
       margin: auto;
     }
     h2 {
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
-    .card {
-      background-color: var(--card);
-      padding: 1.5rem;
-      border-radius: 10px;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      color: #00bfff;
+      margin-top: 2rem;
     }
     ul {
-      margin-left: 1.5rem;
-      margin-top: 0.5rem;
+      list-style: none;
+      padding-left: 0;
     }
-    li {
-      margin: 0.4rem 0;
+    ul li::before {
+      content: "🚀 ";
     }
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 1rem;
-      margin-bottom: 1.5rem;
     }
     th, td {
-      border: 1px solid #333;
+      border: 1px solid #444;
       padding: 0.75rem;
       text-align: left;
     }
@@ -75,30 +56,19 @@
       background-color: #222;
     }
     .contact {
-      background-color: var(--card);
+      background-color: #1a1a1a;
       padding: 2rem;
       text-align: center;
-      margin-top: 2rem;
-      border-radius: 10px;
     }
     .contact a {
-      color: var(--accent);
+      color: #00bfff;
       text-decoration: none;
-      font-weight: 600;
     }
     footer {
       text-align: center;
       padding: 1rem;
       font-size: 0.9rem;
       color: #888;
-    }
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      section {
-        padding: 1rem;
-      }
     }
   </style>
 </head>
@@ -110,100 +80,55 @@
   </header>
 
   <section>
-    <h2>🚀 Welcome to the Future of Personal Cloud Computing</h2>
-    <p>Take full control of your digital world with the <strong>Smart Personal Cloud Storage</strong> — a compact, secure, and fully customizable private cloud built on Raspberry Pi. Whether for personal use, small business storage, or a smart home setup, this device delivers speed, privacy, and flexibility — without monthly fees or data limits.</p>
-    <p>With its touchscreen control, expandable hardware, and secure remote access, <strong>SmartCloudPi</strong> gives you total ownership of your data, anywhere, anytime.</p>
+    <h2>🚀 Welcome to the Future</h2>
+    <p>SmartCloudPi is a compact, secure, and customizable private cloud built on Raspberry Pi. Ideal for personal use, small businesses, or smart homes — with no monthly fees or data limits.</p>
 
-    <h2>🌟 Why Choose Smart Personal Cloud Storage</h2>
-    <div class="card">
-      <h3>🏠 Own Your Cloud — No Monthly Fees</h3>
-      <p>Skip the subscriptions and reclaim your privacy. With SmartCloudPi, you pay once and own it forever — no hidden costs, no third-party servers.</p>
-    </div>
-    <div class="card">
-      <h3>🔐 Premium Security</h3>
-      <p>Your files stay with you. Local encryption, HTTPS secure login, and user authentication make your data virtually impenetrable to outsiders.</p>
-    </div>
-    <div class="card">
-      <h3>🖥️ Touchscreen Control Interface</h3>
-      <p>Manage files, users, and device settings directly from the built-in touchscreen display — no need to log in from another device.</p>
-    </div>
-    <div class="card">
-      <h3>💾 Customizable Storage & Performance</h3>
-      <ul>
-        <li><strong>RAM Options:</strong> 2GB, 4GB, or 8GB Raspberry Pi variants</li>
-        <li><strong>Storage Options:</strong> SSDs from 256GB up to 4TB</li>
-        <li><strong>Upgradeable Anytime:</strong> Simply swap or expand as your data grows</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>🌐 Remote Access — Anywhere, Anytime</h3>
-      <p>Access your files securely from any browser, on any device. Includes setup for <strong>custom domain access</strong> and <strong>Nextcloud remote dashboard</strong>.</p>
-    </div>
-    <div class="card">
-      <h3>⚡ Energy Efficient for 24/7 Use</h3>
-      <p>Powered by Raspberry Pi’s ultra-efficient design, SmartCloudPi consumes less than 10W — ideal for always-on operation.</p>
-    </div>
-    <div class="card">
-      <h3>🧱 Custom Case Design</h3>
-      <p>A sleek matte-black enclosure with optional branding, LED indicators, and ventilation — designed for both style and performance.</p>
-    </div>
+    <h2>🌟 Why Choose SmartCloudPi</h2>
+    <ul>
+      <li>Own Your Cloud — No Monthly Fees</li>
+      <li>Premium Security with encryption and HTTPS</li>
+      <li>Touchscreen Control Interface</li>
+      <li>Customizable RAM and SSD options</li>
+      <li>Remote Access via browser and custom domain</li>
+      <li>Energy Efficient for 24/7 use</li>
+      <li>Custom Case Design with LED indicators</li>
+    </ul>
 
-    <h2>🧩 What’s Inside the Box</h2>
+    <h2>📦 What’s Inside the Box</h2>
     <table>
       <tr><th>Component</th><th>Description</th></tr>
-      <tr><td>Raspberry Pi (2GB / 4GB / 8GB)</td><td>Custom RAM configuration to suit your workload</td></tr>
-      <tr><td>Custom Enclosure</td><td>Matte black or transparent acrylic with vents and LED indicators</td></tr>
-      <tr><td>Touchscreen Display</td><td>3.5" interface for local controls</td></tr>
-      <tr><td>External SSD (256GB–4TB)</td><td>Plug-and-play via USB 3.0</td></tr>
+      <tr><td>Raspberry Pi</td><td>2GB / 4GB / 8GB RAM options</td></tr>
+      <tr><td>Custom Enclosure</td><td>Matte or transparent with vents and LEDs</td></tr>
+      <tr><td>Touchscreen Display</td><td>3.5" interface for local control</td></tr>
+      <tr><td>External SSD</td><td>256GB to 4TB via USB 3.0</td></tr>
       <tr><td>Power Adapter</td><td>5V/3A USB-C certified supply</td></tr>
-      <tr><td>Pre-installed Software</td><td>Choice of Nextcloud or OpenMediaVault for instant setup</td></tr>
+      <tr><td>Software</td><td>Nextcloud or OpenMediaVault pre-installed</td></tr>
     </table>
-
-    <h2>🧠 Modern Sandwich-Style Design</h2>
-    <ul>
-      <li>🧱 Transparent acrylic layers for a futuristic look</li>
-      <li>🔩 Gold standoffs securely mount the SSD above the Raspberry Pi</li>
-      <li>💡 LED indicators for power and network status</li>
-      <li>🍃 Ventilation slots for silent, cool operation</li>
-      <li>🔌 Neat cable management and USB/PCIe integration</li>
-    </ul>
-    <p>Compact, powerful, and elegant — perfect for desktops, offices, and IoT hubs.</p>
 
     <h2>💼 Perfect For</h2>
     <ul>
-      <li>📁 Personal Cloud Storage for photos, videos, and documents</li>
-      <li>🏢 Small Business File Server with multi-user access</li>
-      <li>🧑‍💻 Developer Sandbox for remote code and backups</li>
-      <li>🏠 Smart Home Hub with integrated local data management</li>
-    </ul>
-
-    <h2>⚙️ How It Works</h2>
-    <ul>
-      <li>Connect the device to power and your router</li>
-      <li>Access it via browser using your local IP or custom domain</li>
-      <li>Upload, download, and manage your data securely</li>
-      <li>Customize and monitor via touchscreen or remote dashboard</li>
+      <li>Personal Cloud Storage</li>
+      <li>Small Business File Server</li>
+      <li>Developer Sandbox</li>
+      <li>Smart Home Hub</li>
     </ul>
 
     <h2>💬 What Our Customers Say</h2>
     <p><em>“Finally, a cloud I can trust. No subscriptions, no snooping.”</em> — Priya M., Mumbai</p>
     <p><em>“Perfect for my home office. Fast, secure, and stylish.”</em> — Arjun R., Bengaluru</p>
-
-    <h2>🔧 Fully Customizable — Built Just for You</h2>
-    <p>Every SmartCloudPi is made to order. Choose your RAM, storage capacity, case style, and software configuration. We tailor each setup to match your workflow — from a minimalist home cloud to a full-fledged business data hub.</p>
-
-    <div class="contact">
-      <h2>🛒 Get Yours Today</h2>
-      <p>Take control of your digital life — with <strong>Smart Personal Cloud Storage</strong>, your data truly belongs to you.</p>
-      <p>📍 <strong>Website:</strong> Coming Soon</p>
-      <p>📧 <a href="mailto:shub6059@gmail.com">shub6059@gmail.com</a></p>
-      <p>📞 <a href="tel:+919284983407">+91-9284983407</a></p>
-    </div>
   </section>
 
+  <div class="contact">
+    <h2>🛒 Get Yours Today</h2>
+    <p><strong>Shubham Patil</strong> — DevOps Engineer & MERN Stack Developer</p>
+    <p>📧 <a href="mailto:shub6059@gmail.com">shub6059@gmail.com</a></p>
+    <p>📞 <a href="tel:+919284983407">+91-9284983407</a></p>
+    <p>🌐 <a href="https://github.com/shub6059" target="_blank">github.com/shub6059</a></p>
+  </div>
+
   <footer>
-    © 2025 Shubham Patil — SmartCloudPi. All rights reserved.
+    © 2025 Shubham Patil — SmartCloudPi
   </footer>
 
 </body>
-</html> 
+</html>
