@@ -1,134 +1,425 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Smart Personal Cloud Storage</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #0f0f0f;
-      color: #f5f5f5;
-    }
-    header {
-      background-color: #1a1a1a;
-      padding: 2rem;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-    header p {
-      font-size: 1.1rem;
-      color: #ccc;
-    }
-    section {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    h2 {
-      color: #00bfff;
-      margin-top: 2rem;
-    }
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    ul li::before {
-      content: "🚀 ";
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1rem;
-    }
-    th, td {
-      border: 1px solid #444;
-      padding: 0.75rem;
-      text-align: left;
-    }
-    th {
-      background-color: #222;
-    }
-    .contact {
-      background-color: #1a1a1a;
-      padding: 2rem;
-      text-align: center;
-    }
-    .contact a {
-      color: #00bfff;
-      text-decoration: none;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #888;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Personal Cloud Storage - SmartCloudPi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #007bff;
+        }
+        .feature-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .feature-box {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .feature-box:hover {
+            transform: translateY(-5px);
+        }
+        .feature-box img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .gif-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .faq {
+            margin-bottom: 15px;
+        }
+        .faq h4 {
+            cursor: pointer;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin: 0;
+        }
+        .faq p {
+            display: none;
+            padding: 10px;
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            margin: 0;
+        }
+        .pricing-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .pricing-box {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .pricing-box h3 {
+            color: #007bff;
+        }
+        .pricing-box .price {
+            font-size: 2em;
+            font-weight: bold;
+            color: #28a745;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #007bff;
+            color: white;
+        }
+        @media (max-width: 768px) {
+            .feature-box, .pricing-box {
+                width: 100%;
+            }
+            table, th, td {
+                display: block;
+                width: 100%;
+            }
+            th {
+                text-align: center;
+            }
+        }
+    </style>
+    <script>
+        function toggleFAQ(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+    </script>
 </head>
 <body>
+    <header>
+        <h1>🚀 Smart Personal Cloud Storage</h1>
+        <h2>🧠 Your Data. Your Control. Anywhere. Anytime.</h2>
+        <p>Welcome to the future of personal cloud computing! Take full control of your digital world with the <strong>Smart Personal Cloud Storage</strong> — a compact, secure, and fully customizable private cloud built on Raspberry Pi. Perfect for personal use, small business storage, or smart home setups, this device delivers unmatched speed, privacy, and flexibility — all without monthly fees or data limits.</p>
+        <p>With touchscreen control, expandable hardware, and secure remote access, <strong>SmartCloudPi</strong> gives you total ownership of your data, anywhere, anytime.</p>
+        <div class="gif-container">
+            <img src="https://example.com/smartcloudpi-demo.gif" alt="Animated GIF: Futuristic Cloud Device in Action">
+            <p><em>Watch the SmartCloudPi in action with this animated demo of setup and remote access.</em></p>
+        </div>
+    </header>
 
-  <header>
-    <h1>🧠 SMART PERSONAL CLOUD STORAGE</h1>
-    <p>Your Data. Your Control. Anywhere. Anytime.</p>
-  </header>
+    <section id="why-choose">
+        <h2>🌟 Why Choose Smart Personal Cloud Storage?</h2>
+        <div class="feature-container">
+            <div class="feature-box">
+                <img src="https://example.com/cloud-icon.gif" alt="Cloud Icon GIF">
+                <h3>🏠 Own Your Cloud — No Monthly Fees</h3>
+                <p>Skip subscriptions and reclaim your privacy. Pay once, own forever — no hidden costs or third-party servers.</p>
+            </div>
+            <div class="feature-box">
+                <img src="https://example.com/lock-icon.gif" alt="Lock Icon GIF">
+                <h3>🔐 Premium Security</h3>
+                <p>Local encryption, HTTPS login, and user authentication keep your data impenetrable.</p>
+            </div>
+            <div class="feature-box">
+                <img src="https://example.com/touchscreen-demo.gif" alt="Touchscreen GIF">
+                <h3>🖥️ Touchscreen Control Interface</h3>
+                <p>Manage files, users, and settings directly from the 3.5" touchscreen — no external devices needed.</p>
+            </div>
+            <div class="feature-box">
+                <img src="https://example.com/storage-upgrade.gif" alt="Storage Upgrade GIF">
+                <h3>💾 Customizable Storage & Performance</h3>
+                <p>RAM: 2GB, 4GB, or 8GB. Storage: SSDs from 256GB to 4TB. Upgrade anytime by swapping or expanding.</p>
+            </div>
+            <div class="feature-box">
+                <img src="https://example.com/remote-access.gif" alt="Remote Access GIF">
+                <h3>🌐 Remote Access — Anywhere, Anytime</h3>
+                <p>Secure browser access from any device. Includes custom domain setup and Nextcloud dashboard.</p>
+            </div>
+            <div class="feature-box">
+                <img src="https://example.com/energy-efficient.gif" alt="Energy Efficient GIF">
+                <h3>⚡ Energy Efficient for 24/7 Use</h3>
+                <p>Ultra-efficient Raspberry Pi design consumes &lt;10W — ideal for always-on operation.</p>
+            </div>
+            <div class="feature-box">
+                <img src="https://example.com/case-design.gif" alt="Case Design GIF">
+                <h3>🧱 Custom Case Design</h3>
+                <p>Sleek matte-black enclosure with optional branding, LED indicators, and ventilation for style and performance.</p>
+            </div>
+        </div>
+    </section>
 
-  <section>
-    <h2>🚀 Welcome to the Future</h2>
-    <p>SmartCloudPi is a compact, secure, and customizable private cloud built on Raspberry Pi. Ideal for personal use, small businesses, or smart homes — with no monthly fees or data limits.</p>
+    <section id="detailed-specs">
+        <h2>📊 Detailed Specifications</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Specification</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Processor</strong></td>
+                    <td>Raspberry Pi 4 Model B with Quad-core Cortex-A72 (ARM v8) 64-bit SoC @ 1.5GHz</td>
+                </tr>
+                <tr>
+                    <td><strong>RAM Options</strong></td>
+                    <td>2GB, 4GB, or 8GB LPDDR4-3200 SDRAM</td>
+                </tr>
+                <tr>
+                    <td><strong>Storage</strong></td>
+                    <td>External SSD via USB 3.0 (256GB to 4TB), expandable</td>
+                </tr>
+                <tr>
+                    <td><strong>Connectivity</strong></td>
+                    <td>Gigabit Ethernet, Dual-band Wi-Fi 5 (802.11ac), Bluetooth 5.0</td>
+                </tr>
+                <tr>
+                    <td><strong>Display</strong></td>
+                    <td>3.5" TFT touchscreen (480x320 resolution)</td>
+                </tr>
+                <tr>
+                    <td><strong>Power Consumption</strong></td>
+                    <td>5V/3A via USB-C, idle &lt;5W, active &lt;10W</td>
+                </tr>
+                <tr>
+                    <td><strong>Operating System</strong></td>
+                    <td>Raspberry Pi OS (64-bit) with pre-installed Nextcloud or OpenMediaVault</td>
+                </tr>
+                <tr>
+                    <td><strong>Dimensions</strong></td>
+                    <td>Compact: 100mm x 80mm x 50mm (case included)</td>
+                </tr>
+                <tr>
+                    <td><strong>Weight</strong></td>
+                    <td>Approximately 300g (with SSD)</td>
+                </tr>
+                <tr>
+                    <td><strong>Warranty</strong></td>
+                    <td>1-year limited warranty on hardware</td>
+                </tr>
+                <tr>
+                    <td><strong>Compatibility</strong></td>
+                    <td>Works with Windows, macOS, Linux, Android, and iOS devices</td>
+                </tr>
+                <tr>
+                    <td><strong>Supported File Formats</strong></td>
+                    <td>All common formats; supports media streaming and sharing</td>
+                </tr>
+                <tr>
+                    <td><strong>Backup Features</strong></td>
+                    <td>Automated local and cloud backups, versioning support</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 
-    <h2>🌟 Why Choose SmartCloudPi</h2>
-    <ul>
-      <li>Own Your Cloud — No Monthly Fees</li>
-      <li>Premium Security with encryption and HTTPS</li>
-      <li>Touchscreen Control Interface</li>
-      <li>Customizable RAM and SSD options</li>
-      <li>Remote Access via browser and custom domain</li>
-      <li>Energy Efficient for 24/7 use</li>
-      <li>Custom Case Design with LED indicators</li>
-    </ul>
+    <section id="whats-inside">
+        <h2>🧩 What’s Inside the Box</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Component</th>
+                    <th>Description</th>
+                    <th>Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Raspberry Pi (2GB / 4GB / 8GB)</strong></td>
+                    <td>Custom RAM configuration for your workload.</td>
+                    <td><img src="https://example.com/raspberry-pi.gif" alt="Raspberry Pi GIF"></td>
+                </tr>
+                <tr>
+                    <td><strong>Custom Enclosure</strong></td>
+                    <td>Matte black or transparent acrylic with vents and LED indicators.</td>
+                    <td><img src="https://example.com/enclosure.gif" alt="Enclosure GIF"></td>
+                </tr>
+                <tr>
+                    <td><strong>Touchscreen Display</strong></td>
+                    <td>3.5" interface for local controls.</td>
+                    <td><img src="https://example.com/touchscreen-display.gif" alt="Touchscreen Display GIF"></td>
+                </tr>
+                <tr>
+                    <td><strong>External SSD (256GB–4TB)</strong></td>
+                    <td>Plug-and-play via USB 3.0.</td>
+                    <td><img src="https://example.com/ssd.gif" alt="SSD GIF"></td>
+                </tr>
+                <tr>
+                    <td><strong>Power Adapter</strong></td>
+                    <td>5V/3A USB-C certified supply.</td>
+                    <td><img src="https://example.com/power-adapter.gif" alt="Power Adapter GIF"></td>
+                </tr>
+                <tr>
+                    <td><strong>Pre-installed Software</strong></td>
+                    <td>Choose Nextcloud or OpenMediaVault for instant setup.</td>
+                    <td><img src="https://example.com/software-setup.gif" alt="Software Setup GIF"></td>
+                </tr>
+                <tr>
+                    <td><strong>Quick Start Guide</strong></td>
+                    <td>Step-by-step setup instructions and troubleshooting tips.</td>
+                    <td><img src="https://example.com/guide.gif" alt="Guide GIF"></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 
-    <h2>📦 What’s Inside the Box</h2>
-    <table>
-      <tr><th>Component</th><th>Description</th></tr>
-      <tr><td>Raspberry Pi</td><td>2GB / 4GB / 8GB RAM options</td></tr>
-      <tr><td>Custom Enclosure</td><td>Matte or transparent with vents and LEDs</td></tr>
-      <tr><td>Touchscreen Display</td><td>3.5" interface for local control</td></tr>
-      <tr><td>External SSD</td><td>256GB to 4TB via USB 3.0</td></tr>
-      <tr><td>Power Adapter</td><td>5V/3A USB-C certified supply</td></tr>
-      <tr><td>Software</td><td>Nextcloud or OpenMediaVault pre-installed</td></tr>
-    </table>
+    <section id="design">
+        <h2>🧠 Modern Sandwich-Style Design</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Design Element</th>
+                    <th>Description</th>
+                    <th>Visual</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>🧱 <strong>Transparent Acrylic Layers</strong></td>
+                    <td>Futuristic look with layered components.</td>
+                    <td><img src="https://example.com/layers.gif" alt="Layers GIF"></td>
+                </tr>
+                <tr>
+                    <td>🔩 <strong>Gold Standoffs</strong></td>
+                    <td>Securely mount the SSD above the Raspberry Pi.</td>
+                    <td><img src="https://example.com/standoffs.gif" alt="Standoffs GIF"></td>
+                </tr>
+                <tr>
+                    <td>💡 <strong>LED Indicators</strong></td>
+                    <td>Power and network status at a glance.</td>
+                    <td><img src="https://example.com/led.gif" alt="LED GIF"></td>
+                </tr>
+                <tr>
+                    <td>🍃 <strong>Ventilation Slots</strong></td>
+                    <td>Silent, cool operation.</td>
+                    <td><img src="https://example.com/ventilation.gif" alt="Ventilation GIF"></td>
+                </tr>
+                <tr>
+                    <td>🔌 <strong>Cable Management</strong></td>
+                    <td>Neat USB/PCIe integration.</td>
+                    <td><img src="https://example.com/cable-management.gif" alt="Cable Management GIF"></td>
+                </tr>
+            </tbody>
+        </table>
+        <p><em>Compact, powerful, and elegant — perfect for desktops, offices, and IoT hubs.</em></p>
+    </section>
 
-    <h2>💼 Perfect For</h2>
-    <ul>
-      <li>Personal Cloud Storage</li>
-      <li>Small Business File Server</li>
-      <li>Developer Sandbox</li>
-      <li>Smart Home Hub</li>
-    </ul>
+    <section id="perfect-for">
+        <h2>💼 Perfect For</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Use Case</th>
+                    <th>Description</th>
+                    <th>Icon</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>📁 <strong>Personal Cloud Storage</strong></td>
+                    <td>Store photos, videos, and documents securely.</td>
+                    <td><img src="https://example.com/personal-storage.gif" alt="Personal Storage GIF"></td>
+                </tr>
+                <tr>
+                    <td>🏢 <strong>Small Business File Server</strong></td>
+                    <td>Multi-user access for teams.</td>
+                    <td><img src="https://example.com/business-server.gif" alt="Business Server GIF"></td>
+                </tr>
+                <tr>
+                    <td>🧑‍💻 <strong>Developer Sandbox</strong></td>
+                    <td>Remote code and backups.</td>
+                    <td><img src="https://example.com/developer.gif" alt="Developer GIF"></td>
+                </tr>
+                <tr>
+                    <td>🏠 <strong>Smart Home Hub</strong></td>
+                    <td>Integrated local data management.</td>
+                    <td><img src="https://example.com/smart-home.gif" alt="Smart Home GIF"></td>
+                </tr>
+                <tr>
+                    <td>🎥 <strong>Media Streaming</strong></td>
+                    <td>Stream videos and music to any device.</td>
+                    <td><img src="https://example.com/media-streaming.gif" alt="Media Streaming GIF"></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 
-    <h2>💬 What Our Customers Say</h2>
-    <p><em>“Finally, a cloud I can trust. No subscriptions, no snooping.”</em> — Priya M., Mumbai</p>
-    <p><em>“Perfect for my home office. Fast, secure, and stylish.”</em> — Arjun R., Bengaluru</p>
-  </section>
+    <section id="how-it-works">
+        <h2>⚙️ How It Works</h2>
+        <ol>
+            <li><strong>Connect</strong>: Plug into power and your router.</li>
+            <li><strong>Access</strong>: Use browser via local IP or custom domain.</li>
+            <li><strong>Manage</strong>: Upload, download, and customize via touchscreen or remote dashboard.</li>
+            <li><strong>Secure</strong>: Enable encryption and set up user accounts.</li>
+            <li><strong>Expand</strong>: Add more storage or integrate with other devices as needed.</li>
+        </ol>
+        <div class="gif-container">
+            <img src="https://example.com/setup-process.gif" alt="Setup Process GIF">
+            <p><em>Step-by-step animated guide to getting started.</em></p>
+        </div>
+    </section>
 
-  <div class="contact">
-    <h2>🛒 Get Yours Today</h2>
-    <p><strong>Shubham Patil</strong> — DevOps Engineer & MERN Stack Developer</p>
-    <p>📧 <a href="mailto:shub6059@gmail.com">shub6059@gmail.com</a></p>
-    <p>📞 <a href="tel:+919284983407">+91-9284983407</a></p>
-    <p>🌐 <a href="https://github.com/shub6059" target="_blank">github.com/shub6059</a></p>
-  </div>
+    <section id="privacy-security">
+        <h2>🔒 Privacy and Security</h2>
+        <p>Your data is encrypted locally using AES-256 encryption. All connections are secured with HTTPS, and multi-factor authentication (MFA) is supported. Unlike public clouds, SmartCloudPi ensures no third-party access or data mining. Regular updates keep your system secure.</p>
+        <ul>
+            <li><strong>End-to-End Encryption</strong>: Data is encrypted before storage.</li>
+            <li><strong>Firewall Protection</strong>: Built-in firewall blocks unauthorized access.</li>
+            <li><strong>Backup Options</strong>: Automatic backups to external drives or cloud services.</li>
+            <li><strong>User Permissions</strong>: Granular control over file access and sharing.</li>
+            <li><strong>Audit Logs</strong>: Track all activities for security monitoring.</li>
+        </ul>
+    </section>
 
-  <footer>
-    © 2025 Shubham Patil — SmartCloudPi
-  </footer>
-
-</body>
-</html>
+    <section id="pricing">
+        <h2>💰 Pricing Options</
